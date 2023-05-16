@@ -153,7 +153,7 @@ app.get("/states/:stateId/stats/", async (request, response) => {
 
   WHERE state_id = ${stateId};`;
 
-  const totalCasesByState = await db.all(stateStatQuery);
+  const totalCasesByState = await db.get(stateStatQuery);
   console.log(totalCasesByState);
   response.send(totalCasesByState);
 });
